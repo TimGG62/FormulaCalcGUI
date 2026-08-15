@@ -82,7 +82,7 @@ public class FormulaApp extends Application {
     private void handleFormula(Stage primaryStage, int formulaID) {
         Stage stage = new Stage();
 
-        formula = (formulaID == 1) ? new Volume() : new Coulomb();
+        formula = (formulaID == 1) ? new IdealGasLaw() : new Coulomb();
         buttonText = formula.getParameterList();
 
         // Create buttons
