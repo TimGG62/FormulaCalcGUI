@@ -40,6 +40,14 @@ public class RotationalPower implements IFormula {
         if (variable == null) {
             return 0;
         }
+        if (variable.equalsIgnoreCase("Power")) {
+            torque = Double.parseDouble(values[0]);
+            speed = Double.parseDouble(values[1]);
+            efficiency = Double.parseDouble(values[2]);
+            computePower();
+            return power;
+
+        }
         return 0;
     }
 
