@@ -50,7 +50,7 @@ public class FormulaApp extends Application {
 
         // Create buttons
         Button btnOne = new Button("Formula 1: Ideal Gas Law");
-        Button btnTwo = new Button("Formula 2: Coulombs Law");
+        Button btnTwo = new Button("Formula 2: Rotational Power");
         Button btnClose = new Button("Exit");
 
         // Set button handlers
@@ -82,7 +82,7 @@ public class FormulaApp extends Application {
     private void handleFormula(Stage primaryStage, int formulaID) {
         Stage stage = new Stage();
 
-        formula = (formulaID == 1) ? new IdealGasLaw() : new Coulomb();
+        formula = (formulaID == 1) ? new IdealGasLaw() : new RotationalPower();
         buttonText = formula.getParameterList();
 
         // Create buttons
