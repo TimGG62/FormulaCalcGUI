@@ -35,3 +35,24 @@ public class IdealGasLaw implements IFormula {
         temperature = (pressure * volume) / (moles * R);
     }
 
+    @Override
+    public double compute(String variable, String[] values) {
+        if (variable == null) {
+            return 0;
+        }
+        if (variable.equalsIgnoreCase("Pressure")) {
+            volume = Double.parseDouble(values[0]);
+            moles = Double.parseDouble(values[1]);
+            temperature = Double.parseDouble(values[2]);
+            computePressure();
+            return pressure;
+
+        } else if (variable.equalsIgnoreCase("Volume")) {
+            moles = Double.parseDouble(values[0]);
+            temperature = Double.parseDouble(values[1]);
+            pressure = Double.parseDouble(values[2]);
+            computeVolume();
+            return volume;
+
+
+
