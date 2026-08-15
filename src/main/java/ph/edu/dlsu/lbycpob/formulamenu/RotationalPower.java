@@ -19,6 +19,22 @@ public class RotationalPower implements IFormula {
     public double getEfficiency() { return efficiency; }
     public void setEfficiency(double efficiency) { this.efficiency = efficiency; }
 
+    public void computePower() {
+        power = (2 * Math.PI * speed * torque * efficiency) / 60.0;
+    }
+
+    public void computeTorque() {
+        torque = (60.0 * power) / (2 * Math.PI * speed * efficiency);
+    }
+
+    public void computeSpeed() {
+        speed = (60.0 * power) / (2 * Math.PI * torque * efficiency);
+    }
+
+    public void computeEfficiency() {
+        efficiency = (60.0 * power) / (2 * Math.PI * speed * torque);
+    }
+
     @Override
     public double compute(String variable, String[] values) {
         if (variable == null) {
