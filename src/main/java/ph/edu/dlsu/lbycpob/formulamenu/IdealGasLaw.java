@@ -18,3 +18,20 @@ public class IdealGasLaw implements IFormula {
 
     public double getTemperature() { return temperature; }
     public void setTemperature(double temperature) { this.temperature = temperature; }
+
+    public void computePressure() {
+        pressure = (moles * R * temperature) / volume;
+    }
+
+    public void computeVolume() {
+        volume = (moles * R * temperature) / pressure;
+    }
+
+    public void computeMoles() {
+        moles = (pressure * volume) / (R * temperature);
+    }
+
+    public void computeTemperature() {
+        temperature = (pressure * volume) / (moles * R);
+    }
+
